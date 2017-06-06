@@ -5,7 +5,7 @@ class Pantry
 
   def initialize
     @stock = {}
-    @r = Recipe.new #this needs to be more dynamic, take out
+    @r = Recipe.new
     @shopping_list = shopping_list
   end
 
@@ -43,8 +43,8 @@ class Pantry
       @shopping_list =  r.ingredients
     elsif
       r.ingredients.map do |key, value|
-        if key != @shopping_list.key(value)
-          @shopping_list[key] = value
+        if key != @shopping_list.key(value)  #need to change block here
+          @shopping_list[key] = value            #should except existing keys
         else
           @shopping_list[key] = @shopping_list[key] + value
         end
@@ -52,7 +52,6 @@ class Pantry
     end
     @shopping_list
   end
-
 
   def print_shopping_list
     @shopping_list.each { |key, value| puts "#{key}: #{value}"}

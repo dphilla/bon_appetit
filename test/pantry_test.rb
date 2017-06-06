@@ -79,11 +79,3 @@ class PantryTest < Minitest::Test
     assert_equal pantry.print_shopping_list,result
   end
 end
-
-# #
-# r = Recipe.new("Spicy Cheese Pizza")
-# r.add_ingredient("Cayenne Pepper", 0.025)
-# r.add_ingredient("Cheese", 75)
-# r.add_ingredient("Flour", 500)
-# pantry = Pantry.new
-# require 'pry'; binding.pry
