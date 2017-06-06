@@ -41,8 +41,14 @@ class Pantry
   def add_to_shopping_list(r)
     if @shopping_list == nil
       @shopping_list =  r.ingredients
-    else
-      @shopping_list = @shopping_list + r.ingredients
+    elsif
+      r.ingredients.map do |key, value|
+        if key != @shopping_list.key
+          @shopping_list[key] = value
+        else
+          @shopping_list[key] = @shopping_list[key] + value
+        end
+      end
     end
     @shopping_list
   end
