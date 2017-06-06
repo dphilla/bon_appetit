@@ -46,7 +46,17 @@ class PantryTest < Minitest::Test
   end
 
   def test_can_add_to_shopping_list
-  end 
+    skip
+    r = Recipe.new("Spicy Cheese Pizza")
+    r.add_ingredient("Cheese", 20)
+    r.add_ingredient("Flour", 20)
+    pantry
+    pantry.add_to_shopping_list(r)
+    result = r.ingredients
+    assert_equal pantry.shopping_list, r.ingredients
+  end
+
+
 end
 
 #

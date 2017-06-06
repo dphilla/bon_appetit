@@ -1,14 +1,15 @@
 require_relative 'recipe'
 
 class Pantry
-  attr_reader :stock, :r
+  attr_reader :stock, :r, :shopping_list
 
   def initialize
     @stock = {}
-    @r = Recipe.new("Spicy Cheese Pizza")
+    @r = Recipe.new("Spicy Cheese Pizza") #this needs to be more dynamic
     r.add_ingredient("Cayenne Pepper", 0.025)
     r.add_ingredient("Cheese", 75)
     r.add_ingredient("Flour", 500)
+    @shopping_list = shopping_list
   end
 
   def stock_check(item)
@@ -39,4 +40,13 @@ class Pantry
     end
     @r.ingredients
   end
+
+  def add_to_shopping_list(r)
+    if @shopping_list == nil
+      @shopping_list =  @r.ingredients
+    else
+    end
+    @shopping_list
+  end
+
 end
