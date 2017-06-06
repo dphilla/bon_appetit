@@ -43,7 +43,7 @@ class Pantry
       @shopping_list =  r.ingredients
     elsif
       r.ingredients.map do |key, value|
-        if key != @shopping_list.key
+        if key != @shopping_list.key(value)
           @shopping_list[key] = value
         else
           @shopping_list[key] = @shopping_list[key] + value
