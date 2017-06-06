@@ -44,6 +44,9 @@ class PantryTest < Minitest::Test
               "Flour"          => {quantity: 5, units: "Centi-Units"}}
     assert_equal pantry.convert_units(r), result
   end
+
+  def test_can_add_to_shopping_list
+  end 
 end
 
 #
